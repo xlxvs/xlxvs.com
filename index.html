@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style type="text/css">
+        body {
+          color: #fff;
+          text-decoration: none;
+          margin: 0 auto;
+          cursor: default, !important;
+        }
+
+    
+        
+        .overlay {
+        	-moz-transition: all 0.5s;
+            -webkit-transition: all 0.5s;
+            -o-transition: all 0.5s;
+            transition: all 0.5s;
+            position: absolute;
+            margin: 0 auto;
+            top: center;
+            left: 45%;
+         
+            z-index: 1;
+        	color: #FFF;
+            font-size: 25px;
+            font-family: 'Arial';
+        	cursor: default !important;
+        }
+        
+        .overlay:hover {
+        	-webkit-transform: skewX(-20deg);
+            -moz-transform: skewX(-20deg);
+            -o-transform: skewX(-20deg);
+            transform: skewX(-20deg);
+            -webkit-animation: neon2 1.5s ease-in-out infinite alternate;
+          -moz-animation: neon2 1.5s ease-in-out infinite alternate;
+          animation: neon2 1.5s ease-in-out infinite alternate;
+        }
+        
+        .overlay:nth-child(2) overlay {
+          font-size: 1.5em;
+          color: #228DFF;
+          font-family: 'Arial;
+        }
+        
+        .overlay:nth-child(2) overlay:hover {
+          -webkit-animation: neon2 1.5s ease-in-out infinite alternate;
+          -moz-animation: neon2 1.5s ease-in-out infinite alternate;
+          animation: neon2 1.5s ease-in-out infinite alternate;
+        }
+        
+        
+        .githubbt {
+            z-index: 1;
+        	font-family: 'Bungee Hairline', cursive;
+            top: center;
+            left: center;
+            position: absolute;
+            text-decoration: none;
+            color: #fff;
+            font-size: 20px;
+            font-weight: 50px;
+            margin: 0 auto;
+            text-shadow: 0px 2px
+        	cursor: default !important;
+        	onclick="self.close()"
+        }
+        
+        .githubbt:hover {
+            z-index: 1;
+        	font-family: 'Bungee Hairline', cursive;
+            top: 55%center;
+            left: center;
+            position: absolute;
+            text-decoration: none;
+            color: #fff;
+            font-size: 20px;
+            font-weight: 50px;
+            margin: 0 auto;
+            text-shadow: 4px 3px #fff
+        }
+        
+        .portfobt {
+            z-index: 1;
+        	font-family: 'Bungee Hairline', cursive;
+            top: 3%;
+            left: center;
+            position: absolute;
+            text-decoration: none;
+            color: #fff;
+            font-size: 20px;
+            font-weight: 50px;
+            margin: 0 auto;
+            text-shadow: 0px 2px
+        	cursor: default !important;
+        }
+        
+        .portfobt:hover {
+            z-index: 1;
+        	font-family: 'Bungee Hairline', cursive;
+            top: 3%;
+            left: center;
+            position: absolute;
+            text-decoration: none;
+            color: #fff;
+            font-size: 20px;
+            font-weight: 50px;
+            margin: 0 auto;
+            text-shadow: 4px 3px #fff
+        }
+        
+        .linkedinbt {
+            z-index: 1;
+            font-family: 'Bungee Hairline', cursive;
+            top: 6%;
+            left: center;
+            position: absolute;
+            text-decoration: none;
+            color: #fff;
+            font-size: 20px;
+            font-weight: 50px;
+            margin: 0 auto;
+            text-shadow: 0px 2px
+        	cursor: default !important;
+        }
+        
+        .linkedinbt:hover {
+            z-index: 1;
+            font-family: 'Bungee Hairline', cursive;
+            top: 6%;
+            left: center;
+            position: absolute;
+            text-decoration: none;
+            color: #fff;
+            font-size: 20px;
+            font-weight: 50px;
+            margin: 0 auto;
+            text-shadow: 4px 3px #fff
+        }
+        
+        .grain:after {
+          content: '';
+          width: auto;
+          height: auto;
+          position: absolute;
+          top: -5%;
+          left: -5%;
+          opacity: .15;
+          background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/662025/grain.jpg') repeat center center;
+          -webkit-animation: grain 0.5s steps(1) infinite;
+          animation: grain 0.5s steps(1) infinite;
+        }
+        
+        /* Film Animations */
+        // Grain
+        @keyframes grain {
+          0%, 100% {
+            transform: translate(0, 0, 0);
+          }
+        
+          10% {
+            transform: translate(-1%, -1%);
+          }
+        
+          20% {
+            transform: translate(1%, 1%);
+          }
+        
+          30% {
+            transform: translate(-2%, -2%);
+          }
+        
+          40% {
+            transform: translate(3%, 3%);
+          }
+        
+          50% {
+            transform: translate(-3%, -3%);
+          }
+        
+          60% {
+            transform: translate(4%, 4%);
+          }
+        
+          70% {
+            transform: translate(-4%, -4%);
+          }
+        
+          80% {
+            transform: translate(2%, 2%);
+          }
+        
+          90% {
+            transform: translate(-3%, -3%);
+          }
+        }
+        
+        // Quick Scratches
+        @keyframes scratch {
+          0%, 100% {
+            transform: translateX(0);
+            opacity: 0.075;
+          }
+        
+          10% {
+            transform: translateX(-1%);
+          }
+        
+          20% {
+            transform: translateX(1%);
+          }
+        
+          30% {
+            transform: translateX(-2%);
+                opacity: 0.09;
+          }
+        
+          40% {
+            transform: translateX(3%);
+          }
+        
+          50% {
+            transform: translateX(-3%);
+            opacity: 0.05;
+          }
+        
+          60% {
+            transform: translateX(8%);
+          }
+        
+          70% {
+            transform: translateX(-3%);
+          }
+        
+          80% {
+            transform: translateX(10%);
+            opacity: 0.02;
+          }
+        
+          90% {
+            transform: translateX(-2%);
+          }
+        }
+        /* Simple Title Animation */
+        @keyframes draw {
+          0% {
+            width: 0%;
+          }
+        
+          100% {
+            width: 110%;
+          }
+        }
+        
+        
+        @keyframes draw-bottom {
+          0% {
+            width: 0%;
+          }
+        
+          100% {
+            width: 100%;
+          }
+        }
+        
+        
+        @keyframes fade {
+          0% {
+            opacity: 0;
+          }
+        
+          100% {
+            opacity: 1;
+          }
+        }
+        
+        @keyframes flicker {
+          0% {
+            opacity: 0.27861;
+          }
+          5% {
+            opacity: 0.34769;
+          }
+          10% {
+            opacity: 0.23604;
+          }
+          15% {
+            opacity: 0.90626;
+          }
+          20% {
+            opacity: 0.18128;
+          }
+          25% {
+            opacity: 0.83891;
+          }
+          30% {
+            opacity: 0.65583;
+          }
+          35% {
+            opacity: 0.67807;
+          }
+          40% {
+            opacity: 0.26559;
+          }
+          45% {
+            opacity: 0.84693;
+          }
+          50% {
+            opacity: 0.96019;
+          }
+          55% {
+            opacity: 0.08594;
+          }
+          60% {
+            opacity: 0.20313;
+          }
+          65% {
+            opacity: 0.71988;
+          }
+          70% {
+            opacity: 0.53455;
+          }
+          75% {
+            opacity: 0.37288;
+          }
+          80% {
+            opacity: 0.71428;
+          }
+          85% {
+            opacity: 0.70419;
+          }
+          90% {
+            opacity: 0.7003;
+          }
+          95% {
+            opacity: 0.36108;
+          }
+          100% {
+            opacity: 0.24387;
+          }
+        }
+        @keyframes textShadow {
+          0% {
+            text-shadow: 0.4389924193300864px 0 1px rgba(0,30,255,0.5), -0.4389924193300864px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+          }
+          5% {
+            text-shadow: 2.7928974010788217px 0 1px rgba(0,30,255,0.5), -2.7928974010788217px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+          }
+          10% {
+            text-shadow: 0.02956275843481219px 0 1px rgba(0,30,255,0.5), -0.02956275843481219px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+          }
+          15% {
+            text-shadow: 0.40218538552878136px 0 1px rgba(0,30,255,0.5), -0.40218538552878136px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+          }
+          20% {
+            text-shadow: 3.4794037899852017px 0 1px rgba(0,30,255,0.5), -3.4794037899852017px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+          }
+          25% {
+            text-shadow: 1.6125630401149584px 0 1px rgba(0,30,255,0.5), -1.6125630401149584px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+          }
+          30% {
+            text-shadow: 0.7015590085143956px 0 1px rgba(0,30,255,0.5), -0.7015590085143956px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+          }
+          35% {
+            text-shadow: 3.896914047650351px 0 1px rgba(0,30,255,0.5), -3.896914047650351px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+          }
+          40% {
+            text-shadow: 3.870905614848819px 0 1px rgba(0,30,255,0.5), -3.870905614848819px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+          }
+          45% {
+            text-shadow: 2.231056963361899px 0 1px rgba(0,30,255,0.5), -2.231056963361899px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+          }
+          50% {
+            text-shadow: 0.08084290417898504px 0 1px rgba(0,30,255,0.5), -0.08084290417898504px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+          }
+          55% {
+            text-shadow: 2.3758461067427543px 0 1px rgba(0,30,255,0.5), -2.3758461067427543px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+          }
+          60% {
+            text-shadow: 2.202193051050636px 0 1px rgba(0,30,255,0.5), -2.202193051050636px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+          }
+          65% {
+            text-shadow: 2.8638780614874975px 0 1px rgba(0,30,255,0.5), -2.8638780614874975px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+          }
+          70% {
+            text-shadow: 0.48874025155497314px 0 1px rgba(0,30,255,0.5), -0.48874025155497314px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+          }
+          75% {
+            text-shadow: 1.8948491305757957px 0 1px rgba(0,30,255,0.5), -1.8948491305757957px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+          }
+          80% {
+            text-shadow: 0.0833037308038857px 0 1px rgba(0,30,255,0.5), -0.0833037308038857px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+          }
+          85% {
+            text-shadow: 0.09769827255241735px 0 1px rgba(0,30,255,0.5), -0.09769827255241735px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+          }
+          90% {
+            text-shadow: 3.443339761481782px 0 1px rgba(0,30,255,0.5), -3.443339761481782px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+          }
+          95% {
+            text-shadow: 2.1841838852799786px 0 1px rgba(0,30,255,0.5), -2.1841838852799786px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+          }
+          100% {
+            text-shadow: 2.6208764473832513px 0 1px rgba(0,30,255,0.5), -2.6208764473832513px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+          }
+        }
+        .crt::after {
+          content: " ";
+          display: block;
+          position: absolute;
+          top: 0;
+          left: 0;
+          bottom: 0;
+          right: 0;
+          background: rgba(18, 16, 16, 0.1);
+          opacity: 0;
+          z-index: 2;
+          pointer-events: none;
+          animation: flicker 0.15s infinite;
+        }
+        .crt::before {
+          content: " ";
+          display: block;
+          position: absolute;
+          top: 0;
+          left: 0;
+          bottom: 0;
+          right: 0;
+          background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+          z-index: 2;
+          background-size: 100% 2px, 3px 100%;
+          pointer-events: none;
+        }
+        .crt {
+          animation: textShadow 1.6s infinite;
+        }
+        
+        #overlay {
+          width: 500px;
+          margin: auto;
+        }
+        
+        /*Neon*/
+        p {
+          text-align: center;
+          font-size: 7em;
+          margin: 20px 0 20px 0;
+        }
+        
+        a {
+          text-decoration: none;
+          -webkit-transition: all 0.5s;
+          -moz-transition: all 0.5s;
+          transition: all 0.5s;
+        }
+        p:nth-child(2) a {
+          font-size: 1.2em;
+          color: #fFF;
+          font-family: arial;
+        }
+        
+        p:nth-child(2) a:hover {
+          -webkit-animation: neon2 1.5s ease-in-out infinite alternate;
+          -moz-animation: neon2 1.5s ease-in-out infinite alternate;
+          animation: neon2 1.5s ease-in-out infinite alternate;
+        }
+        
+        @-webkit-keyframes neon2 {
+          from {
+            text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #228DFF, 0 0 70px #228DFF, 0 0 80px #228DFF, 0 0 100px #228DFF, 0 0 150px #228DFF;
+          }
+          to {
+            text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #228DFF, 0 0 35px #228DFF, 0 0 40px #228DFF, 0 0 50px #228DFF, 0 0 75px #228DFF;
+          }
+        }
+        /*glow for mozilla*/
+        
+        @-moz-keyframes neon2 {
+          from {
+            text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #228DFF, 0 0 70px #228DFF, 0 0 80px #228DFF, 0 0 100px #228DFF, 0 0 150px #228DFF;
+          }
+          to {
+            text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #228DFF, 0 0 35px #228DFF, 0 0 40px #228DFF, 0 0 50px #228DFF, 0 0 75px #228DFF;
+          }
+        }
+        /*glow*/
+        
+        @keyframes neon2 {
+          from {
+            text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #228DFF, 0 0 70px #228DFF, 0 0 80px #228DFF, 0 0 100px #228DFF, 0 0 150px #228DFF;
+          }
+          to {
+            text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #228DFF, 0 0 35px #228DFF, 0 0 40px #228DFF, 0 0 50px #228DFF, 0 0 75px #228DFF;
+          }
+        }
+        /*REEEEEEEEEEESPONSIVE*/
+        
+        @media (max-width: 650px) {
+          #container {
+            width: 100%;
+          }
+          p {
+            font-size: 3.5em;
+          }
+        }
+    </style>
+
+
+    <title>𝐱 𝐥 𝐱 𝐯 𝐬</title>
+    <link href="https://fonts.googleapis.com/css?family=Bungee+Hairline" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Megrim" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Libre+Barcode+39+Text" rel="stylesheet">
+    <link rel="icon" href="https://i.imgur.com/yGa6zSN.png">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+
+    <div class="overlay">
+        <h1>x l x v s</h1>
+        <style>
+          h1 {text-align:center}
+        </style>
+    </div>
+    
+
+    <a class="crt">
+    </a>
+    </div>
+    <a class="crt">
+
+        <video autoplay="" muted="" loop="" id="myVideo">
+            <source src="https://dl.dropboxusercontent.com/s/jy4dv3tq0bh4zru/cloud.mp4" type="video/mp4">
+        </video>
+
+    </a><a href="https://github.com/xlxvs" target="_blank" class="githubbt">github</a>
+    <a href="https://drive.google.com/uc?export=download&id=1JWVc0UYEqbQVhlcrqxfWAx-eaVY3N-kj" target="_blank" class="portfobt">portfolio</a>
+    <a href="https://www.linkedin.com/in/henryschurter/" target="_blank" class="linkedinbt">linkedin</a>
+
+    <div class="grain"></div>
+
+
+    <style>
+        .default {cursor: default;}
+        
+        #myVideo {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%; 
+            min-height: 100%;
+
+          h1 {
+   display:inline;
+   width:200px;
+   text-align:center;
+}
+    </style>
+
+    <script>
+        // Write JavaScript here
+    </script>
+</body>
